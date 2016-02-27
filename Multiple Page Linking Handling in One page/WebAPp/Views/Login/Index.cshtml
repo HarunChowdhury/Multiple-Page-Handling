@@ -1,0 +1,58 @@
+﻿@model WebAPp.Models.Login
+@{
+    ViewBag.Title = "Index";
+}
+
+    <h2>
+        Handling multiple submit buttons in MVC
+    </h2>
+
+<h5 style="color: Red">@ViewBag.msg</h5>
+
+
+@using (Html.BeginForm("Index", "Login", FormMethod.Post))
+{
+
+    <form action="Login/Index" id="myform" method="post">
+
+        <table>
+            <tr>
+                <td>
+                    UserName
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.UserName)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Password)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.Password)
+                </td>
+            </tr>
+        </table>
+        <br />
+
+        <div style="padding-left: 80px;">
+            <input type="submit" id="Login" value="Login" name="Command" title="Login" />
+            <input type="submit" id="Register" value="Register" name="Command" title="Register" />
+            <input type="submit" id="Cancel" value="Cancel" name="Command" title="Cancel" />
+
+        </div>
+    </form>
+}
+  

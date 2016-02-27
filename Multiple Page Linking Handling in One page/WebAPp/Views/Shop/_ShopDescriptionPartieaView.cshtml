@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WebAPp.Models.Shop>
+
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+
+        <th>
+            Description
+        </th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VProducts.Description)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+
+

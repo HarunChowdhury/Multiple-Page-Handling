@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WebAPp.Models.Shop>
+           
+
+<script type="text/javascript">
+
+   $(function () {
+       $("#ProductId").change(function () {
+           var id = $("#ProductId").val();
+           $("#data").load("Shop/ShopDescriptionPartieaView", { prodId: id });
+         
+        });
+    });
+
+</script>
+
+<h4>Select A option</h4>
+@using (Html.BeginForm())
+{
+
+    @Html.DropDownList("ProductId", string.Empty)
+}
+
+
+
+<div id="data">
+    
+    @Html.Partial("~/Views/Shop/_ShopDescriptionPartieaView.cshtml", Model);
+
+</div>
